@@ -5,18 +5,26 @@
 
 # Accepts budget as an argument.
 # Returns the suggestion as a string.
+from budgetFunction import budgetFunction
+from calculator import calculator, add
+from weather_advice import WeatherAssistant
+from shopping_list import add_shoppinglist, remove_shoppinglist
+from temperatureConverter import celcius_to_farenheit, farenheit_to_celcius
+from inventory_class import add_inventory, remove_inventory, sinngle_item
+from validatePassword import validate_password
 
-if budget < 100:
-            return "Local day trips."
-        elif budget < 500:
-            return "Nearby cities."
-        else:
-            return "International travel!"
-
-
-
-
-
+budgetFunction(300)
+calculator(10,5)
+add(10,5)
+WeatherAssistant("rainy")
+celcius_to_farenheit(25)
+farenheit_to_celcius(77)
+validate_password("LizzyRizzy1130")
+add_shoppinglist("strawberry")
+remove_shoppinglist("bananas")
+add_inventory('apples')
+remove_inventory("mango")
+sinngle_item(0)
 
 # Instructions for Students:
 
@@ -24,16 +32,9 @@ if budget < 100:
 # Make a Calculator class that contains these functions as methods.
 # Ensure that division checks for zero before attempting the operation.
 # Move the arithmetic logic into a file named calculator.py.
-a = 10
-b = 5
-print(a + b)
-print(a - b)
-print(a * b)
-if b != 0:
-    print(a / b)
-else:
-    print("Cannot divide by zero")
-    
+
+
+
 
 ####################################################################################################
 # Instructions for Students:
@@ -41,15 +42,11 @@ else:
 # Create a function that takes weather as an argument and returns the appropriate advice.
 # Optionally, create a class WeatherAssistant with a method for weather advice.
 #Move the weather advice logic into a file named weather_advice.py.
-weather = "rainy"
-if weather == "rainy":
-    print("Take an umbrella.")
-elif weather == "sunny":
-    print("Wear sunglasses.")
-elif weather == "cold":
-    print("Wear a jacket.")
-else:
-    print("Weather unknown. Dress comfortably.")
+
+
+
+
+
 
 
 
@@ -62,11 +59,6 @@ else:
 # Optionally, create a ShoppingList class that manages the list with the above methods.
 #Move the shopping list logic into a file named shopping_list.py.
 
-shopping_list = ["apples", "bananas", "carrots"]
-shopping_list.append("dates")
-shopping_list.remove("bananas")
-for item in shopping_list:
-    print(item)
 
 
 
@@ -77,13 +69,6 @@ for item in shopping_list:
 # fahrenheit_to_celsius(fahrenheit)
 # Consider creating a TemperatureConverter class with these methods.
 
-celsius = 25
-fahrenheit = (celsius * 9/5) + 32
-print(f"{celsius}°C is {fahrenheit}°F")
-
-fahrenheit = 77
-celsius = (fahrenheit - 32) * 5/9
-print(f"{fahrenheit}°F is {celsius}°C")
 
 
 
@@ -99,17 +84,6 @@ print(f"{fahrenheit}°F is {celsius}°C")
 # Optionally, organize these into an Inventory class.
 
 
-inventory = {}
-inventory["apples"] = 10
-inventory["bananas"] = 5
-inventory["apples"] -= 3
-if inventory["apples"] <= 0:
-    del inventory["apples"]
-print(inventory)
-
-
-
-
 
 
 
@@ -117,15 +91,3 @@ print(inventory)
 
 # Refactor this code by creating a validate_password(password) function.
 # Extend it to check for additional rules like special characters.
-
-password = "Pass1234"
-if len(password) >= 8:
-    if any(char.isdigit() for char in password):
-        if any(char.isupper() for char in password):
-            print("Strong password")
-        else:
-            print("Password needs an uppercase letter")
-    else:
-        print("Password needs a number")
-else:
-    print("Password is too short")
